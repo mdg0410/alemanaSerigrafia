@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const FooterContainer = styled.footer`
   background-color: #F2F2F2; /* Color de fondo para el pie de página */
@@ -109,7 +110,7 @@ const Footer = () => {
           <NewsletterText>
             Recibe actualizaciones exclusivas y promociones especiales directamente en tu bandeja de entrada.
           </NewsletterText>
-          <SubscribeButton>Suscribirse</SubscribeButton>
+          <SubscribeButton as={Link} to='/Contact'>Suscribirse</SubscribeButton>
         </NewsletterCTA>
       </FooterGrid>
     </FooterContainer>

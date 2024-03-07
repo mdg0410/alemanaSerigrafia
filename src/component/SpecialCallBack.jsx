@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+
 
 const StrategicCTAContainer = styled.section`
   text-align: center;
@@ -39,7 +41,7 @@ const StrategicCTA = () => {
         Nuestro compromiso es ofrecerte servicios de serigrafía de la más alta calidad. Descubre cómo podemos
         transformar tu visión en realidad y mejorar tu imagen hoy mismo.
       </StrategicCTAText>
-      <StrategicCTAButton>Mejora tu Imagen</StrategicCTAButton>
+      <StrategicCTAButton as={Link} to="/Contact">Mejora tu Imagen</StrategicCTAButton>
     </StrategicCTAContainer>
   );
 };

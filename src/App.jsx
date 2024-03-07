@@ -1,37 +1,22 @@
-import NavBar from './component/Navbar'
-import Header from './component/Header'
-import CallToAction from './component/CallToAction'
-import PopularServices from './component/PopularServices'
-import SpecialOffers from './component/SpecialOffers'
-import ContactForm from './component/ContactForm'
-import VisualElements from './component/VisualElements'
-import TestimonialsSection from './component/TestimonialsSection'
-import Guarantees from './component/Guarantees'
-import SpecialCallBack from './component/SpecialCallBack'
-import ExtendedContactForm from './component/ExtendedContactForm'
-import ContactAndFAQ from './component/ContactAndFAQ'
-import ContactInfoAndSocial from './component/ContactInfoAndSocial'
-import Footer from './component/Footer'
-
+import Home from './Routes/Home'
+import Services from './Routes/Services'
+import Contact from './Routes/Contact'
+import Layout from './component/Layout'
+import Products from './Routes/Products'
+import { Routes, Route } from 'react-router-dom'
 import './App.css'
 
 function App() {
   return (
     <div>
-      <NavBar />
-      <Header />
-      <CallToAction />
-      <PopularServices />
-      <SpecialOffers />
-      <ContactForm />
-      <VisualElements />
-      <TestimonialsSection />
-      <Guarantees />
-      <SpecialCallBack />
-      <ExtendedContactForm />
-      <ContactAndFAQ />
-      <ContactInfoAndSocial />
-      <Footer />
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="Services" element={<Services />} />
+          <Route path="Contact" element={<Contact />} />
+          <Route path='Products' element={<Products />} />
+        </Route>
+      </Routes>
     </div>
   )
 }

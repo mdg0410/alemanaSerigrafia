@@ -1,27 +1,5 @@
 import styled from 'styled-components';
 
-const ContactAndFAQContainer = styled.section`
-  text-align: center;
-  padding: 60px 20px;
-`;
-
-const ContactFormContainer = styled.div`
-  margin-bottom: 40px;
-`;
-
-const ContactFormTitle = styled.h2`
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #6A3F42; /* Color del texto del título */
-`;
-
-const ContactFormLink = styled.a`
-  font-size: 1.2rem;
-  color: #90668B; /* Color del texto del enlace */
-  text-decoration: underline;
-  cursor: pointer;
-`;
-
 const FAQContainer = styled.div`
   text-align: left;
 `;
@@ -43,7 +21,7 @@ const FAQAnswer = styled.p`
   display: none;
 `;
 
-const ContactAndFAQ = () => {
+const SeccionFAQ = () => {
   const toggleFAQ = (index) => {
     const faqAnswer = document.getElementById(`faq-answer-${index}`);
     faqAnswer.style.display === 'none'
@@ -52,16 +30,7 @@ const ContactAndFAQ = () => {
   };
 
   return (
-    <ContactAndFAQContainer>
-      <ContactFormContainer>
-        <ContactFormTitle>Formulario de Contacto Ampliado</ContactFormTitle>
-        <p>
-          ¿Listo para empezar? Completa nuestro{' '}
-          <ContactFormLink href="url_del_formulario_completo">formulario de contacto completo</ContactFormLink> con
-          información detallada sobre tu proyecto.
-        </p>
-      </ContactFormContainer>
-
+ 
       <FAQContainer>
         <h2>Preguntas Frecuentes</h2>
         <FAQQuestion>
@@ -80,8 +49,8 @@ const ContactAndFAQ = () => {
           </FAQAnswer>
         </FAQQuestion>
       </FAQContainer>
-    </ContactAndFAQContainer>
+
   );
 };
 
-export default ContactAndFAQ;
+export default SeccionFAQ;

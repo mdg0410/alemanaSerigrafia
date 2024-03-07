@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const NavbarContainer = styled.nav`
   background-color: #006699; /* Color principal del navbar */
@@ -34,10 +35,10 @@ const NavBar = () => {
     <NavbarContainer>
       <Logo>TuLogo</Logo>
       <NavLinks>
-        <NavLink href="#">Inicio</NavLink>
-        <NavLink href="#">Productos</NavLink>
-        <NavLink href="#">Servicios</NavLink>
-        <NavLink href="#">Contacto</NavLink>
+        <NavLink as={ Link } to='/'>Inicio</NavLink>
+        <NavLink as={ Link } to='/Productos'>Productos</NavLink>
+        <NavLink as={ Link } to='/Servicios'>Servicios</NavLink>
+        <NavLink as={ Link } to='/Contact'>Contacto</NavLink>
       </NavLinks>
     </NavbarContainer>
   )

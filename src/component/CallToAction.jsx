@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const CallToActionContainer = styled.section`
   background-color: #EBD6B9; /* Color de fondo para la sección de llamado a la acción */
@@ -38,7 +39,7 @@ const CallToAction = () => {
     <CallToActionContainer>
       <CtaTitle>Descubre Nuestros Servicios</CtaTitle>
       <CtaButtonContainer>
-        <CtaButton>Ver Productos</CtaButton>
+        <CtaButton as={Link} to='/Products'>Ver Productos</CtaButton>
       </CtaButtonContainer>
     </CallToActionContainer>
   );
