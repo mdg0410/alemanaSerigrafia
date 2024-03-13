@@ -66,35 +66,6 @@ const TestimonialsSection = () => {
             <AuthorName>Cliente Satisfecho 1</AuthorName>
           </TestimonialAuthor>
         </TestimonialCard>
-        <TestimonialCard>
-          <TestimonialText>Excelente calidad en cada impresión, ¡superaron mis expectativas!</TestimonialText>
-          <TestimonialAuthor>
-            <AuthorAvatar src="url_avatar_cliente1.jpg" alt="Avatar Cliente 1" />
-            <AuthorName>Cliente Satisfecho 1</AuthorName>
-          </TestimonialAuthor>
-        </TestimonialCard>
-        <TestimonialCard>
-          <TestimonialText>Excelente calidad en cada impresión, ¡superaron mis expectativas!</TestimonialText>
-          <TestimonialAuthor>
-            <AuthorAvatar src="url_avatar_cliente1.jpg" alt="Avatar Cliente 1" />
-            <AuthorName>Cliente Satisfecho 1</AuthorName>
-          </TestimonialAuthor>
-        </TestimonialCard>
-        <TestimonialCard>
-          <TestimonialText>Excelente calidad en cada impresión, ¡superaron mis expectativas!</TestimonialText>
-          <TestimonialAuthor>
-            <AuthorAvatar src="url_avatar_cliente1.jpg" alt="Avatar Cliente 1" />
-            <AuthorName>Cliente Satisfecho 1</AuthorName>
-          </TestimonialAuthor>
-        </TestimonialCard>
-        {/* Repite este bloque para cada testimonio */}
-        <TestimonialCard>
-          <TestimonialText>Rápidos, eficientes y con atención personalizada. ¡Volveré por más!</TestimonialText>
-          <TestimonialAuthor>
-            <AuthorAvatar src="url_avatar_cliente2.jpg" alt="Avatar Cliente 2" />
-            <AuthorName>Cliente Satisfecho 2</AuthorName>
-          </TestimonialAuthor>
-        </TestimonialCard>
       </TestimonialCardContainer>
       {/* Puedes agregar más testimonios y reseñas según sea necesario */}
     </TestimonialsContainer>
