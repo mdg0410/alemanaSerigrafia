@@ -17,7 +17,7 @@ const HeaderContainer = styled.div`
   }
 
   @media screen and (min-width: 1024px) {
-    height: 80vh; /* Altura para TVs */
+    height: 93vh; /* Altura para TVs */
   }
 `;
 
