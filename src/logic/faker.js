@@ -5,6 +5,7 @@ const generateProduct = () => {
     id: faker.string.uuid(),
     image: faker.image.url(),
     description: faker.commerce.productDescription(),
+    price: parseFloat(faker.commerce.price()),
   };
 };
 
