@@ -34,9 +34,10 @@ const CardItem = ({ id, image, description, price }) => {
     setSelectedOption(option);
   };
 
-  const handleAddToCart = (id, description, option, count, price) => {
+  const handleAddToCart = (id, image, description, option, count, price) => {
     dispatch(addItemToCard({
       id,
+      image,
       description,
       option,
       count,
@@ -79,8 +80,8 @@ const CardItem = ({ id, image, description, price }) => {
         />
         <label htmlFor={`option3-${id}`}>Option 3</label>
       </div>
-      <div>
-        <div>
+      <div style={{display: 'flex', gap: '3vh'}}>
+        <div style={{display: 'flex', gap: '1vh'}}>
           <button onClick={() => itemCount > 1 && setItemCount(itemCount - 1)}>-</button>
           <span>{itemCount}</span>
           <button onClick={() => setItemCount(itemCount + 1)}>+</button>
@@ -89,7 +90,7 @@ const CardItem = ({ id, image, description, price }) => {
           <span>Price: {price}</span>
         </div>
       </div>
-      <button onClick={() => handleAddToCart(id, description, selectedOption, itemCount, price)}>Add to cart</button>
+      <button onClick={() => handleAddToCart(id, image, description, selectedOption, itemCount, price)}>Add to cart</button>
     </Card>
   );
 };

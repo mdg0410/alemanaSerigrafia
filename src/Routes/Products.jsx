@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import products from "../logic/faker";
 import CardItem from "../component/CardItem";
@@ -24,9 +24,74 @@ const Sidebar = styled.div`
   z-index: 100;
 `;
 
+const CartItem = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  width: 100%;
+`;
+
+const ItemTopRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+`;
+
+const ItemBottomRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+`;
+
+const ItemCountLabel = styled.span`
+  font-weight: bold;
+  margin-right: 5px;
+`;
+
+const ItemImage = styled.img`
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+`;
+
+const ItemDescription = styled.p`
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+`;
+
+const ItemOption = styled.p`
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+`;
+
+const ItemCount = styled.p`
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+`;
+
+const ItemTotal = styled.p`
+  margin: 0;
+  font-size: 18px;
+  color: #000;
+  font-weight: bold;
+`;
+
 const Products = () => {
   const shoppingCard = useSelector(selectShoppingCard);
   const [isCartOpen, setIsCartOpen] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleCartOpen = () => {
     setIsCartOpen(true);
@@ -47,19 +112,26 @@ const Products = () => {
       </button>
       {isCartOpen && (
         <Sidebar>
-          <button onClick={handleCartClose}>Cerrar</button>
-          <div>
-            {shoppingCard.items.map((item) => (
-              <div key={item.id}>
-                <img src={item.image} alt={item.description} />
-                <p>{item.description}</p>
-                <p>{item.option}</p>
-                <p>{item.count}</p>
-                <p>Total: {item.price*item.count}</p>
-              </div>
-            ))}
-          </div>
-        </Sidebar>
+        <button onClick={handleCartClose}>Cerrar</button>
+        <div>
+          {shoppingCard.items.map((item) => (
+            <CartItem key={item.id}>
+            <ItemTopRow>
+              <ItemImage src={item.image} alt={item.description} />
+              <ItemDescription>{item.description}</ItemDescription>
+            </ItemTopRow>
+            <ItemBottomRow>
+              <ItemOption>{item.option}</ItemOption>
+              <ItemCount>
+                <ItemCountLabel>Cantidad:</ItemCountLabel>
+                {item.count}
+              </ItemCount>
+              <ItemTotal>Total: {item.price * item.count}</ItemTotal>
+            </ItemBottomRow>
+          </CartItem>
+          ))}
+        </div>
+      </Sidebar>
       )}
     <CardContainer>
       {products.map((product) => (
