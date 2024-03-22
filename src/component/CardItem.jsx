@@ -35,8 +35,9 @@ const CardItem = ({ id, image, description, price }) => {
   };
 
   const handleAddToCart = (id, image, description, option, count, price) => {
+    const product = `${id}/${option}`
     dispatch(addItemToCard({
-      id,
+      product,
       image,
       description,
       option,
