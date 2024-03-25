@@ -1,8 +1,10 @@
+import styled from "styled-components"
+import PopularServices from "../component/PopularServices"
 
 const Services = () => {
   return (
     <div>
-      <h1>Services</h1>
+      <PopularServices />
     </div>
   )
 }
